@@ -1,6 +1,5 @@
 import { default as readlineSync } from 'readline-sync';
 const input = (context) => readlineSync.question(context);
-
 /* 
   At a high level, FP focuses on what should be done, rather than on how.
   This makes code simpler, shorter, more elegant, and can easily
@@ -47,3 +46,22 @@ var computeSuccess = function(result = '', status) {
 var isSuccess = computeSuccess(false, 200);
 
 console.log(isSuccess);
+
+/* Recursion
+  Recursion in general is great for developing algorithms and is a big aid in
+  solving a large class of problems.  You basically have a function that can
+  call itself at a certain point, and when that call is done, a program
+  can continue working with whatever result it has received.
+
+  You often use recursion when dealing with factorial for example.
+  if n is 0 then n!=1, otherwise if n is greater than 0, then n! = n * (n-1)!
+*/
+
+function factorial(n, result = 0) {
+  if (n === 0)
+    return 1;
+  else
+    return n * factorial(n - 1);
+}
+
+console.log(factorial(5))
