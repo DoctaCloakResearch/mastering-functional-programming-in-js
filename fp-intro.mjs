@@ -63,3 +63,24 @@ function factorial(n, result = 0) {
 
 console.log(factorial(5));
 
+/* Closures
+  Closuers are a way to utilize data hiding with private variables, this is how
+  we are able to utilize modules and other nice features in JavaScript.  The
+  primary concept is that when you define a function, it can refer to noy only
+  its own local variables, but also to everything otuside of its context.
+
+  Below is a poor example of a closure.  Better examples would be
+  pure functions, or higher order functions, as well as the module pattern.
+*/
+
+function newCounter() {
+  let count = 0;
+  return function() {
+    count++;
+    return count;
+  }
+}
+const nc = newCounter();
+console.log(nc()); // 1
+console.log(nc()); // 2
+console.log(nc()); // 3
