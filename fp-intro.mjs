@@ -90,5 +90,5 @@ console.log(nc()); // 3
   creating an unnamed/anonymous function.  They can be used pretty much
   anywhere that a regular function can be used, minus constructors.
 */
-const refactoredFactorial = n => (n === 0) ? 1 : n * factorial(n - 1);
-console.log(refactoredFactorial(5))
+const refactoredFactorial = (n) => (n === 0) ? 1 : n * factorial(n - 1);
+console.log(refactoredFactorial(5));
