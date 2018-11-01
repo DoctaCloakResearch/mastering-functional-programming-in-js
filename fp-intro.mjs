@@ -57,7 +57,7 @@ console.log(isSuccess);
   if n is 0 then n!=1, otherwise if n is greater than 0, then n! = n * (n-1)!
 */
 
-function factorial(n, result = 0) {
+function factorial(n) {
   return (n === 0) ? 1 : n * factorial(n-1);
 }
 
@@ -84,3 +84,11 @@ const nc = newCounter();
 console.log(nc()); // 1
 console.log(nc()); // 2
 console.log(nc()); // 3
+
+/* Arrow functions
+  In JavaScript, arrow functions are just a concise, more succint way of
+  creating an unnamed/anonymous function.  They can be used pretty much
+  anywhere that a regular function can be used, minus constructors.
+*/
+const refactoredFactorial = n => (n === 0) ? 1 : n * factorial(n - 1);
+console.log(refactoredFactorial(5))
