@@ -92,3 +92,45 @@ console.log(nc()); // 3
 */
 const refactoredFactorial = (n) => (n === 0) ? 1 : n * factorial(n - 1);
 console.log(refactoredFactorial(5));
+
+/* Spread
+  The spread operator is great for expanding an expression in places where
+  one may otherwise require multiple arguments, elements, or variables.
+*/
+
+var x = [1, 2, 3];
+function sum3(a, b, c) {
+  return a + b + c;
+}
+var y = sum3(...x); // equivalent to sum3(1, 2, 3);
+console.log(y); // 6
+
+function sum(numbers) {
+  var total = 0;
+  for (var num of numbers) {
+    total += num;
+  }
+  return total;
+}
+var zNumbers = [1, 2, 3, 4, 5, 6]
+var z = sum(zNumbers);
+console.log(z);
+
+// You can also create or join arrays
+var f = [1, 2, 3];
+var g = [4, ...f, 5]; // [4, 1, 2, 3, 5];
+var h = [...f, ...g]; // [1, 2, 3, 4, 1, 2, 3, 5,]
+console.log(g);
+console.log(h);
+
+// Spread works with objects too:
+var p = { some: 3, data: 5};
+var q = { more: 8, ...p } // more: 8, some: 3, data: 5
+console.log(q);
+
+// You can even use spread to work with functions that expect separate params
+// h was declared above in case you forgot, it's storing an array of numbers.
+var minA = Math.min(...h); // 1
+var maxA = Math.max(...h); // 5
+console.log(`The minimum number: ${minA}`);
+console.log(`The maximum number ${maxA}`);
