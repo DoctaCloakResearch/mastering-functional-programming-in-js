@@ -134,3 +134,26 @@ var minA = Math.min(...h); // 1
 var maxA = Math.max(...h); // 5
 console.log(`The minimum number: ${minA}`);
 console.log(`The maximum number ${maxA}`);
+
+const makeSaluteClass = term => 
+  class {
+    constructor(x) {
+      this.x = x;
+    }
+
+    salute(y) {
+      console.log(`${this.x} says "${term}" to ${y}`);
+    }
+  };
+
+  const Spanish = makeSaluteClass("HOLA");
+  new Spanish("ALFA").salute("BETA");
+  // ALFA says "HOLA" to BETA
+
+  new(makeSaluteClass("HELLO"))("GAMMA").salute("DELTA");
+  // GAMMA says "HELLO" to DELTA
+
+  const fullSalute = (c, x, y) => new c(x).salute(y);
+  const French = makeSaluteClass("BON JOUR");
+  fullSalute(French, "EPSILON", "ZETA");
+  // EPSILON says "BON JOUR" to ZETA
