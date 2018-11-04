@@ -1,0 +1,8 @@
+{
+  "name": "functional-programming",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DoctaCloakResearch/mastering-functional-programming-in-js.git",
+  "author": "Christopher Taylor <doctacloak@protonmail.com>",
+  "license": "MIT"
+}
